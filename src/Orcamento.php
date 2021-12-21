@@ -3,5 +3,6 @@ namespace App\DessignPattern;
 
 class Orcamento
 {
-    public float $valor = 0;
+    
+    public float $valor;
 }
