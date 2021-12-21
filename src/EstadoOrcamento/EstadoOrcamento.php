@@ -13,15 +13,15 @@ abstract class EstadoOrcamento
     abstract public function aplicaDescontoExtra(Orcamento $orcamento):float;
     public function aprovar(Orcamento $orcamento):void
     {
-        throw new \DomainException('Um orçamento não pode ser aprovado diretamente');
+        $orcamento->estadoAtual = new Aprovado();
     }
     public function reprovar(Orcamento $orcamento):void
     {
-        throw new \DomainException('Um orçamento não pode ser reprovado diretamente');
+        $orcamento->estadoAtual = new Reprovado();
     }
     public function finalizar(Orcamento $orcamento):void
     {
-        throw new \DomainException('Um orçamento não pode ser finalizado diretamente');
+        $orcamento->estadoAtual = new Finalizado();
     }
 
 }
